@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Insurance Risk Calculator</title>
+</head>
+
+<!--
+    Author: Liam Cleary
+    Project: InsuranceCalcWeb
+
+    All Rights Reserved.
+-->
+
+<body style="background-color:powderblue;">
+    <h1 style="text-align:center;">Welcome To Liam's Health Insurance Risk Calculator Extravaganza!</h1>
+<br />
+    <p style="text-align:center;">Read each question carefully below. Use drop down bars,
+         check boxes
+         and use text boxes for calculations
+         to select your answer to find your insurability. When all answers are selected, press the 
+         appropriate buttons below to obtain proper answers. Your insurability will 
+         be shown below when you are all done! Good Luck!</p>
+
+
+         <label>What is your age?</label><br />
+         <select id="q1">
+                 <option>-- Answer Not Selected --</option>
+                 <option value="0">Less than 30 Years Old</option>
+                 <option value="10">31 - 45 </option>
+                 <option value="20">46 - 60 </option>
+                 <option value="30">Over 61 Years Old</option>
+         </select>
+
+<br></br>
+<br></br>
+<br></br>
+
+<head>
+            <script language="JavaScript">
+        
+
+                function calculateBmi() {
+                var weight = document.bmiForm.weight.value
+                var height = document.bmiForm.height.value
+                if(weight > 0 && height > 0){	
+                var finalBmi = weight/(height)
+                document.bmiForm.bmi.value = finalBmi
+                if(finalBmi < 18.5){
+                document.bmiForm.meaning.value = "Yikes! Gain some weight!"
+                }
+                if(finalBmi > 18.5 && finalBmi < 25){
+                document.bmiForm.meaning.value = "Your BMI is normal!"
+                }
+                if(finalBmi > 25 && finalBmi < 29.9){
+                document.bmiForm.meaning.value = "You are overweight."
+                }
+                if(finalBmi > 30 && finalBmi < 34.9){
+                document.bmiForm.meaning.value = "You are obese."
+                }
+                else{
+                alert("Please Fill in everything correctly")
+                }
+                }
+ 
+</script>
+
+</head>
+<body>
+         <form name="bodymassIndex"> 
+            Weight(kg): <input type="text" name="weight" size="20"><br />
+<br>
+
+            Height(m^2): <input type="text" name="height" size="20"><br />
+<br> 
+            <input type="button" value="Calculate Body Mass Index" onClick="calculateBmi()"><br />
+<br>
+            Your Body Mass Index Is: <input type="text" name="bmi" size="25"><br />
+<br>
+            This Means: <input type="text" name="meaning" size="25"><br />
+<br>
+            <input type="reset" value="Reset" />
+<br>
+            </form>
+
+         
+
+
+
+</body>
+
+
+<head>
+            <script language="JavaScript">
+        
+
+                function calculateBp() {
+                var systolic = document.bpForm.systolic.value
+                var diastolic = document.bpForm.diastolic.value
+                if(systolic > 0 && diastolic > 0){	
+                var finalBp = systolic/(diastolic)
+                document.bpForm.bp.value = finalBp
+                if(finalBp < 120){
+                document.bpForm.meaning.value = "Your Blood Pressure is Normal."
+                }
+                if(finalBp > 120 && finalBp < 129){
+                document.bpForm.meaning.value = "Your Blood Pressure is Elevated."
+                }
+                if(finalBp > 130 && finalBp < 139){
+                document.bpForm.meaning.value = "You Have Stage 1 High Blood Pressure."
+                }
+                if(finalBp > 140 && finalBp < 180){
+                document.bpForm.meaning.value = "You Have Stage 2 High Blood Pressure."
+                }
+                if(finalBp > 181 && finalBp < 300){
+                document.bpForm.meaning.value = "You Are At a Hypertensive Crisis."
+                }
+                else{
+                alert("Please Fill in the space above")
+                }
+                }
+ 
+</script>
+
+</head>
+<body>
+         <form name="bodymassIndex"> 
+            Systolic Blood Pressure: <input type="text" name="weight" size="20"><br />
+<br>
+
+            Diastolic Blood Pressure: <input type="text" name="height" size="20"><br />
+<br> 
+            <input type="button" value="Calculate Body Mass Index" onClick="calculateBmi()"><br />
+<br>
+            Your Body Mass Index Is: <input type="text" name="bmi" size="25"><br />
+<br>
+            This Means: <input type="text" name="meaning" size="25"><br />
+<br>
+            <input type="reset" value="Reset" />
+<br>
+            </form>
+
+            </body>
+            <body>
+            
+<p>Please <strong>check the boxes</strong> that apply to you if you or a family member has a history of:</p>
+
+<form action="/action_page.php">
+  <input type="checkbox" id="familyHistory1" name="familyHistory1" value="10">
+  <label for="familyHistory1"> Diabetes</label><br>
+  <input type="checkbox" id="familyHistory2" name="familyHistory2" value="10">
+  <label for="familyHistory2"> Cancer</label><br>
+  <input type="checkbox" id="familyHistory3" name="familyHistory3" value="10">
+  <label for="familyHistory3"> Alzheimers</label><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+            
+            </body>
+            <script>
+                let totalInsurability = question1Insurability + question2Insurability + 
+    question3Insurability + question4Insurability
+
+    totalInsurability *= 100 / MAX_SCORE;
+    totalInsurability = Math.round(totalInsurability);
+            
+            </script>
